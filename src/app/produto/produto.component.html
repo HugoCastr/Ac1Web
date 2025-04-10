@@ -1,0 +1,17 @@
+<div *ngIf="produtos.length === 0">Nenhum produto disponível no momento</div>
+
+<div *ngFor="let produto of produtos">
+    <div>
+        <h3>{{ produto.nome }}</h3>
+        <p>{{ produto.descricao }}</p>
+        <p>Preço: R$ {{ produto.preco }}</p>
+        <button
+      [disabled]="!produto.estoque"
+      [ngStyle]="{'background-color': produto.estoque ? 'blue' : 'gray'}"
+      (click)="comprar(produto.id)"
+    >
+      Comprar
+    </button>
+    </div>
+</div>
+<p>fun</p>
